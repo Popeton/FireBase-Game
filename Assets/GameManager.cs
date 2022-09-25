@@ -10,16 +10,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
     }
 
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
+        SceneManager.LoadScene(1);
         Time.timeScale = 0;
     }
     public void Replay()
     {
-        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        // SceneManager.LoadScene(0);
     }
 }
